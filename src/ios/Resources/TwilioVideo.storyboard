@@ -114,9 +114,9 @@
                         <constraints>
                             <constraint firstItem="qlu-eV-2lM" firstAttribute="centerX" secondItem="3Bh-pO-6uY" secondAttribute="centerX" id="5jE-Xy-LRj"/>
                             <constraint firstItem="krA-sT-Z3g" firstAttribute="leading" secondItem="3Bh-pO-6uY" secondAttribute="leadingMargin" constant="5" id="AJk-WG-SgW"/>
-                            <constraint firstItem="tZu-uw-hgi" firstAttribute="top" secondItem="hJ3-NM-pz1" secondAttribute="bottom" constant="10" id="VcK-2R-BU5"/>
+                            <constraint firstItem="tZu-uw-hgi" firstAttribute="top" secondItem="hJ3-NM-pz1" secondAttribute="bottom" constant="40" id="VcK-2R-BU5"/>
                             <constraint firstItem="qlu-eV-2lM" firstAttribute="top" secondItem="8oD-ke-cGW" secondAttribute="bottom" constant="16" id="i2A-RE-Xm1"/>
-                            <constraint firstItem="tZu-uw-hgi" firstAttribute="top" secondItem="krA-sT-Z3g" secondAttribute="bottom" constant="16" id="o0p-IZ-2Th"/>
+                            <constraint firstItem="tZu-uw-hgi" firstAttribute="top" secondItem="krA-sT-Z3g" secondAttribute="bottom" constant="40" id="o0p-IZ-2Th"/>
                             <constraint firstItem="hJ3-NM-pz1" firstAttribute="trailing" secondItem="3Bh-pO-6uY" secondAttribute="trailingMargin" constant="5" id="sFH-2X-Gms"/>
                         </constraints>
                     </view>

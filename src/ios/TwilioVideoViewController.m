@@ -101,6 +101,7 @@ NSString *const CLOSED = @"CLOSED";
     if(self.localVideoTrack){
         self.localVideoTrack.enabled = !self.localVideoTrack.isEnabled;
         [self.videoButton setSelected: !self.localVideoTrack.isEnabled];
+        self.previewView.hidden = !self.localVideoTrack.isEnabled;
     }
 }
 
@@ -213,14 +214,14 @@ NSString *const CLOSED = @"CLOSED";
                                                               multiplier:1
                                                                 constant:0];
     [self.view addConstraint:centerX];
-    NSLayoutConstraint *centerY = [NSLayoutConstraint constraintWithItem:self.remoteView
-                                                               attribute:NSLayoutAttributeCenterY
+    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:self.remoteView
+                                                               attribute:NSLayoutAttributeTop
                                                                relatedBy:NSLayoutRelationEqual
                                                                   toItem:self.view
-                                                               attribute:NSLayoutAttributeCenterY
+                                                               attribute:NSLayoutAttributeTop
                                                               multiplier:1
                                                                 constant:0];
-    [self.view addConstraint:centerY];
+    [self.view addConstraint:top];
     NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:self.remoteView
                                                              attribute:NSLayoutAttributeWidth
                                                              relatedBy:NSLayoutRelationEqual
@@ -235,7 +236,7 @@ NSString *const CLOSED = @"CLOSED";
                                                                  toItem:self.view
                                                               attribute:NSLayoutAttributeHeight
                                                              multiplier:1
-                                                               constant:0];
+                                                               constant:-30];
     [self.view addConstraint:height];
 }
 
@@ -457,12 +458,16 @@ NSString *const CLOSED = @"CLOSED";
         enabledVideoTrack:(TVIRemoteVideoTrackPublication *)publication {
     [self logMessage:[NSString stringWithFormat:@"Participant %@ enabled %@ video track.",
                       participant.identity, publication.trackName]];
+
+        self.remoteView.hidden = false;
 }
 
 - (void)remoteParticipant:(TVIRemoteParticipant *)participant
        disabledVideoTrack:(TVIRemoteVideoTrackPublication *)publication {
     [self logMessage:[NSString stringWithFormat:@"Participant %@ disabled %@ video track.",
                       participant.identity, publication.trackName]];
+
+        self.remoteView.hidden = true;
 }
 
 - (void)remoteParticipant:(TVIRemoteParticipant *)participant
