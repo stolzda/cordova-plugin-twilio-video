@@ -1,3 +1,7 @@
+# Warning
+
+This is a custom fork with specific changes. Use https://github.com/okode/cordova-plugin-twilio-video 
+
 # cordova-plugin-twilio-video
 Cordova Plugin for Twilio Video
 
